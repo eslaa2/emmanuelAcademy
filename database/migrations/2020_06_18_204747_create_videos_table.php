@@ -15,7 +15,10 @@ class CreateVideosTable extends Migration
     {
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
+             $table->unsignedBigInteger('lesson_id');
+            $table->unsignedBigInteger('file_path')->nulluable();
             $table->timestamps();
+             $table->foreign('lesson_id')->references('id')->on('tutorials');
         });
     }
 

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateImagesTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -15,7 +16,10 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
+             $table->unsignedBigInteger('lesson_id');
+            $table->unsignedBigInteger('file_path')->nulluable();
             $table->timestamps();
+             $table->foreign('lesson_id')->references('id')->on('tutorials');
         });
     }
 

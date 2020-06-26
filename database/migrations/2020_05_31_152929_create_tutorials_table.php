@@ -21,9 +21,13 @@ class CreateTutorialsTable extends Migration
             $table->String('topic');
             $table->String('description');
             $table->longText('lesson_notes');
-            $table->string('lesson_images')->nulluable();
-            $table->string('lesson_videos')->nulluable();
-            $table->timestamps();        });
+
+
+            $table->timestamps();
+
+
+
+               });
     }
 
     /**
